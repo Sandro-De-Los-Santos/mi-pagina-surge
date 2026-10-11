@@ -2,10 +2,141 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi página con CI/CD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1er Parcial · Sandro De Los Santos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe4;
+      --card: #fdf8ec;
+      --ink: #1b2a2c;
+      --muted: #6b6f6c;
+      --accent: #d8420f;
+      --line: #e8dfcc;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 48px clamp(20px, 5vw, 64px) 28px;
+    }
+    main { flex: 1; max-width: 1040px; width: 100%; margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+    }
+    .lead { margin: 0 0 32px; color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 18px 22px;
+      min-height: 130px;
+    }
+    .card .label {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .card .value { margin: 0 0 6px; font-size: 1.3rem; font-weight: 500; line-height: 1.2; }
+    .card .detail { margin: 0; color: var(--muted); font-size: .9rem; }
+    .grid.small { grid-template-columns: repeat(3, 1fr); }
+    .grid.small .card { min-height: 0; }
+    .grid.small .value { font-size: 1.05rem; }
+    footer {
+      max-width: 1040px;
+      width: 100%;
+      margin: 32px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) {
+      .grid, .grid.small { grid-template-columns: 1fr; }
+      footer { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola, mundo! Mi nombre es Sandro </h1>
-  <p>Desplegada automáticamente con GitHub Actions y Surge.sh</p>
+  <main>
+    <p class="eyebrow">1er parcial · Electiva II</p>
+    <h1>Integración continua con GitHub Actions y Surge.sh</h1>
+    <p class="lead">Cada push a main actualiza la página.</p>
+
+    <ul class="grid">
+      <li class="card">
+        <p class="label">Estudiante</p>
+        <p class="value">Sandro Steven De Los Santos</p>
+      </li>
+      <li class="card">
+        <p class="label">Matrícula</p>
+        <p class="value">2025-1148</p>
+      </li>
+      <li class="card">
+        <p class="label">Materia</p>
+        <p class="value">Electiva II</p>
+        <p class="detail">DevOps</p>
+      </li>
+      <li class="card">
+        <p class="label">Institución</p>
+        <p class="value">ITLA</p>
+      </li>
+    </ul>
+
+    <ul class="grid small">
+      <li class="card">
+        <p class="label">Automatización</p>
+        <p class="value">GitHub Actions</p>
+        <p class="detail">Workflow en .github/workflows</p>
+      </li>
+      <li class="card">
+        <p class="label">Alojamiento</p>
+        <p class="value">Surge.sh</p>
+        <p class="detail">Publicación estática</p>
+      </li>
+      <li class="card">
+        <p class="label">Seguridad</p>
+        <p class="value">GitHub Secrets</p>
+        <p class="detail">El token no está en el código</p>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <span>Electiva II · Primer parcial</span>
+    <span>github.com/Sandro-De-Los-Santos/mi-pagina-surge</span>
+  </footer>
 </body>
 </html>
