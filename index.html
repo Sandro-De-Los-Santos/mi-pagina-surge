@@ -29,20 +29,19 @@
     }
     main { flex: 1; max-width: 1040px; width: 100%; margin: 0 auto; }
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       color: var(--accent);
-      font-size: .8rem;
+      font-size: clamp(2rem, 7vw, 3.8rem);
       font-weight: 700;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
     h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5.5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      max-width: 18ch;
+      margin: 0 0 10px;
+      font-size: clamp(1.25rem, 3vw, 1.7rem);
+      font-weight: 500;
+      line-height: 1.2;
+      max-width: 40ch;
     }
     .lead { margin: 0 0 32px; color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
     .grid {
